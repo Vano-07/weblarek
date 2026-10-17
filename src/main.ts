@@ -4,13 +4,9 @@ import { apiProducts } from './utils/data';
 import { Products } from './components/Models/Products';
 import { Basket } from './components/Models/Basket';
 import { Buyer } from './components/Models/Buyer';
-import { Api, WebLarekApi } from './components/base/Api';
+import { Api } from './components/base/Api';
+import { WebLarekApi } from './components/WebLarekApi';
 import { API_URL } from './utils/constants';
-
-
-
-
-
 
 console.log('=== ПРОВЕРКА МОДЕЛЕЙ ДАННЫХ ===');
 
@@ -46,11 +42,6 @@ buyerModel.setData({ email: '' });
 console.log('11. Валидация (ошибка email): ', buyerModel.validate());
 buyerModel.clear();
 console.log('12. Данные после очистки: ', buyerModel.getData());
-
-
-
-
-
 
 console.log('=== ЗАПРОС К СЕРВЕРУ ===');
 

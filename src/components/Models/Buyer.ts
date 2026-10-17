@@ -1,5 +1,7 @@
 import { IBuyer } from '../../types';
 
+type ValidationErrors = Partial<Record<keyof IBuyer, string>>;
+
 export class Buyer {
     private data: IBuyer = {
         payment: '',
@@ -16,8 +18,8 @@ export class Buyer {
         return this.data;
     }
 
-    validate(): Partial<Record<keyof IBuyer, string>> {
-        const errors: Partial<Record<keyof IBuyer, string>> = {};
+    validate(): ValidationErrors {
+        const errors: ValidationErrors = {};
         const { payment, address, email, phone } = this.data;
 
         if (!payment) errors.payment = 'Не выбран вид оплаты';
